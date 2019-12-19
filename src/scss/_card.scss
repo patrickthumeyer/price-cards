@@ -1,0 +1,181 @@
+$theme: (
+  red: (
+    gradient: linear-gradient(278.9deg, #ff00e5 -46.53%, #ff8a00 122.31%),
+    highlight: #ffeadf
+  ),
+  blue: (
+    gradient: linear-gradient(278.9deg, #fa00ff -46.53%, #2400ff 122.31%),
+    highlight: #e5dbff
+  ),
+  green: (
+    gradient: linear-gradient(278.9deg, #ecff14 -46.53%, #0ccabe 122.31%),
+    highlight: #d6fff4
+  )
+);
+
+@each $colorName, $themeColor in $theme {
+  .card-#{$colorName} {
+    .card-header {
+      background: map-get($themeColor, "gradient");
+    }
+    .card-footer {
+      background: map-get($themeColor, "highlight");
+    }
+  }
+}
+
+.card {
+  width: 400px;
+  height: 442px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  margin: 20px;
+  box-shadow: 5px 5px 10px grey;
+  transition: 0.3s;
+  &-new {
+    .tag-container {
+      display: block;
+    }
+  }
+}
+
+.card:hover {
+  transform: scale(0.98);
+  transition: 0.3s;
+  box-shadow: none;
+}
+
+.card-header {
+  background: linear-gradient();
+  height: 147px;
+  border-radius: 10px 10px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.tag {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+  padding: 4px 12px;
+}
+
+.tag-container {
+  background: rgba(255, 255, 255, 0.6);
+  align-self: flex-end;
+  display: none;
+  position: absolute;
+  top: 18px;
+}
+
+.headline {
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 37px;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0 32px 20px 32px;
+  margin: 0;
+  justify-self: self-end;
+}
+
+.card-main {
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.main-text {
+  font-size: 18px;
+  line-height: 21px;
+  color: #444444;
+  width: 336px;
+  height: 63px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.by {
+  width: 161px;
+  height: 19px;
+  font-size: 16px;
+  line-height: 19px;
+  color: #444444;
+  margin-bottom: 25px;
+}
+
+.price-container {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  margin-bottom: 9px;
+}
+
+.price-new {
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 49px;
+  color: #444444;
+  align-self: flex-end;
+}
+
+.price-old {
+  font-weight: 300;
+  font-size: 42px;
+  line-height: 49px;
+  color: #cacaca;
+  align-self: flex-end;
+  position: relative;
+}
+
+.price-old::before {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 181px;
+  background-color: #cacaca;
+  position: absolute;
+  bottom: 24px;
+  right: -15px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 51px;
+  padding: 0 32px;
+  background: red;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.footer-left {
+  font-size: 14px;
+  line-height: 16px;
+  color: #555555;
+  position: relative;
+}
+
+.footer-left::after {
+  content: "";
+  display: block;
+  height: 16px;
+  width: 1px;
+  background-color: #555555;
+  position: absolute;
+  bottom: 0px;
+  right: -22px;
+}
+
+.footer-right {
+  font-size: 14px;
+  line-height: 16px;
+  color: #555555;
+}
