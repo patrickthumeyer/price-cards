@@ -32,7 +32,6 @@ ol {
 
 body {
   font-family: "Roboto", sans-serif;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,15 +39,27 @@ body {
   background-color: #f3f3f3;
 }
 
+html {
+  position: relative;
+}
+
 .wrapper {
+  width: 100%;
+  margin-top: 0px;
+  position: absolute;
+  top: 550px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card-wrapper {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   max-width: 1400px;
-  margin-top: 0px;
-  margin-bottom: 100px;
-  position: static;
-  z-index: 100;
 }
 
 .header-wrapper {
@@ -64,6 +75,7 @@ body {
 .header {
   text-align: center;
   width: 800px;
+  padding: 20px;
 }
 
 .header-headline {
@@ -87,16 +99,23 @@ body {
   background-color: #f3f3f3;
   top: -200px;
   width: 150%;
-  height: 300px;
+  height: 250px;
   position: relative;
-  transform: skew(0deg, 4deg);
+  transform: skew(0deg, 3deg);
   border-top: 10px solid #af99ff;
   z-index: 0;
+  width: 100%;
+}
+
+.button-wrapper {
+  margin-top: 100px;
+  margin-bottom: 114px;
 }
 
 .footer-wrapper {
   width: 100%;
   text-align: right;
+  bottom: 0;
 }
 
 .footer {
@@ -114,9 +133,9 @@ body {
   font-weight: bold;
   font-size: 16px;
   line-height: 19px;
-  margin-bottom: 110px;
   cursor: pointer;
   transition: 0.3s;
+  border-radius: 5px;
 }
 
 .load-button:hover {
